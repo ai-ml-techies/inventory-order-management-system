@@ -2,6 +2,7 @@ from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
 from sqlalchemy import Float
+from sqlalchemy.orm import relationship
 
 from app.database.database import Base
 
@@ -28,3 +29,8 @@ class Product(Base):
         Integer,
         default=0
     )
+
+    order_items = relationship(
+    "OrderItem",
+    back_populates="product"
+)

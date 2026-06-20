@@ -1,6 +1,7 @@
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
+from sqlalchemy.orm import relationship
 
 from app.database.database import Base
 
@@ -25,3 +26,7 @@ class Customer(Base):
         String,
         nullable=False
     )
+    orders = relationship(
+    "Order",
+    back_populates="customer"
+)

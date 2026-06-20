@@ -109,7 +109,19 @@ def get_order(
             detail="Order not found"
         )
 
-    return order
+    return {
+        "id": order.id,
+        "customer": order.customer.full_name,
+        "total_amount": order.total_amount,
+        "items": [
+            {
+                "product": item.product.name,
+                "quantity": item.quantity,
+                "unit_price": item.unit_price
+            }
+            for item in order.items
+        ]
+    }
 
 @router.delete("/{order_id}")
 def delete_order(
