@@ -1,27 +1,45 @@
-## Running with Docker Compose
+# Inventory Order Management System
 
-```bash
+## Tech Stack
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- React
+- Tailwind CSS
+- Docker
+
+## Features
+- Product Management
+- Customer Management
+- Order Management
+- Inventory Validation
+- Dashboard Summary
+- Swagger Documentation
+
+## Local Setup
+
 docker compose up --build
-```
 
-Services:
+Frontend:
+http://localhost:5173
 
-* Frontend: http://localhost:5173
-* Backend: http://localhost:8000
-* Swagger: http://localhost:8000/docs
-* PostgreSQL: localhost:5432
+Backend:
+http://localhost:8000
 
-## Backend Docker Image
+Swagger:
+http://localhost:8000/docs
 
-Docker Hub:
+## Docker Hub Image
 
-https://hub.docker.com/r/amritainventory1/inventory-backend
+docker pull amritainventory1/inventory-backend:latest
 
-Run manually:
+## Live URLs
 
-```bash
-docker run \
--e DATABASE_URL=postgresql://localhost:5432/inventorydb\
--p 8000:8000 \
-amritainventory1/inventory-backend:latest
-```
+Backend:
+https://inventory-backend-atn7.onrender.com
+
+Swagger:
+https://inventory-backend-atn7.onrender.com/docs
+
+Frontend:
+<Vercel URL>
